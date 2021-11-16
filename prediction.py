@@ -1,11 +1,19 @@
  
 import pickle
 import streamlit as st
- 
-# loading the trained model
-#pickle_in = open('classifier.pkl', 'rb') 
-#classifier = pickle.load(pickle_in)
- 
+from sklearn import preprocessing 
+#loading the trained model
+
+
+# scaler 
+scaler = open('scaler','rb')
+min_max_scaler = pickle.load(scaler)
+
+# input features
+input_features = open('input_features','rb')
+input_features = pickle.load(input_features)
+print(input_features)
+
 @st.cache()
   
 # defining the function which will make the prediction using the data which the user inputs 
